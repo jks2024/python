@@ -77,11 +77,21 @@
 
 # 이중 for문
 # 입력 받은 수가 10이라면 10 * 10의 행렬 출력
+
 num = int(input("정수 입력: "))
-for i in range(1, num + 1):  # 1 ~ num
-    for j in range(1, num + 1):
-        print("*", end=" ")
-    print()
+# cnt = 0
+# for i in range(1, num + 1):  # 1 ~ num
+#     for j in range(1, num + 1):
+#         cnt += 1
+#         print(f"{cnt:4}", end="")
+#     print()
 
+# 단일 for운으로 변경해서 출력 해보기
+# 반복문 범위를 num * num
+# i % num == 0: print()
+for i in range(1, num * num + 1):
+    print(f"{i:4}", end="")
+    if i % num == 0:
+        print()
 
-
+# 2 ~ 9단 까지 구구단 출력하기
