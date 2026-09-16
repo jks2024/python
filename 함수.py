@@ -87,13 +87,9 @@ profile("나희도", 18, "Python", "Java", "C", "C++", "React", "Kotlin")
 profile("조세호", 38, "Python", "Java")
 profile("유재석", 48, "Python", "Java", "C", "C++",)
 
-
 # 실습 문제: 표준 체중 계산기
-#
 # 키(cm)와 성별을 입력받아 표준 체중을 계산하는 함수를 작성하시오.
-#
-# 조건
-#
+
 # 함수 이름은 std_weight로 하고, 매개변수는 키(h)와 성별(sex) 두 개를 받는다.
 # 표준 체중 공식은 다음과 같다.
 # 남성: (키(m))² × 22
@@ -105,7 +101,53 @@ profile("유재석", 48, "Python", "Java", "C", "C++",)
 # 성별은 "남성" 또는 "여성" 문자열로 입력받음
 # 함수 호출 결과를 아래 형식으로 출력하시오. (소수점 둘째 자리까지)
 
+def std_weight(h, sex):
+    hm = h / 100        # 미터 단이 환산
+    if sex == '남성':
+        return hm * hm * 22
+    else:
+        return hm * hm * 21
 
+
+# 키를 입력 받음 : cm
+height = int(input("키(cm) 입력 : "))
+gender = input("성별(남성 / 여성) : ")
+weight = std_weight(height, gender)
+print(f"키 : {height}cm 에 대한 {gender}의 표준 체중은 {weight:.2f}kg 입니다.")
+
+
+# 소수 판별하기
+# def is_prime_func(n):
+#     is_prime = True
+#     for i in range(2, n):
+#         if n % i == 0:
+#             is_prime = False
+#     return is_prime
+#
+#
+# n = int(input("정수를 입력: "))
+# if is_prime_func(n):
+#     print(f"{n}은 소수 입니다.")
+# else:
+#     print(f"{n}은 소수가 아닙니다.")
+
+# 소수의 합 구하기
+def prime_func(n):
+    is_prime = True  # 소수로 기본값을 정의
+    for i in range(2, n):
+        if n % i == 0:
+            is_prime = False  # 소수가 아닌 경우
+    if is_prime:
+        return n  # 소수인 경우만 값 반환
+    else:
+        return 0
+
+n = int(input("정수 입력: "))
+
+total = 0
+for i in range(2, n):
+    total += prime_func(i)
+print(total)
 
 
 
