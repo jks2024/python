@@ -42,6 +42,9 @@ def get_max(a, b):
     else:
         return b
 
+result = get_max(10, 20)
+print(f"큰수 출력: {result}")
+
 # 2-2 원의 반지름을 입력받아 원의 넓이를 반환하는 함수 circle_area(r)를 작성하시오. (원주율은 3.14 사용)
 def circle_area(r):
     return 3.14 * (r ** 2)
@@ -58,6 +61,50 @@ def check_even_odd(num):
 
 print(check_even_odd(7))
 print(check_even_odd(10))
+
+
+# 기본값 인자: 함수 선언 시 매개 변수에 대한 기본값을 정의
+# - 매개변수에 기본값이 정의 되어 있는 경우 함수 호출 시 인자값을 넣지 않으면 기본값으로 호출
+# def profile(name, age=0, job="무직", addr="대한민국"):
+#     print(f"이름: {name}")
+#     print(f"나이: {age}")
+#     print(f"직업: {job}")
+#     print(f"주소: {addr}")
+#
+# profile("안유진", 23, "아이돌", "대전시")
+# profile("장원영", 22, "아이돌")
+# profile("이서", 20)
+
+# 가변 매개 변수:
+def profile(name, age, *lang):
+    print(f"이름 : {name}, 나이 : {age}", end= " ")
+    for e in lang:
+        print(e, end= " ")
+    print()
+
+
+profile("나희도", 18, "Python", "Java", "C", "C++", "React", "Kotlin")
+profile("조세호", 38, "Python", "Java")
+profile("유재석", 48, "Python", "Java", "C", "C++",)
+
+
+# 실습 문제: 표준 체중 계산기
+#
+# 키(cm)와 성별을 입력받아 표준 체중을 계산하는 함수를 작성하시오.
+#
+# 조건
+#
+# 함수 이름은 std_weight로 하고, 매개변수는 키(h)와 성별(sex) 두 개를 받는다.
+# 표준 체중 공식은 다음과 같다.
+# 남성: (키(m))² × 22
+# 여성: (키(m))² × 21
+# 단, 입력받은 키는 cm 단위이므로 함수 내부에서 m 단위로 변환해야 한다. (h / 100)
+# 함수는 계산된 표준 체중 값을 반환(return) 해야 한다. (출력 X)
+# input()을 이용해 사용자로부터 키(cm)와 성별을 입력받는다.
+# 키는 정수로 변환하여 저장 (int(input(...)))
+# 성별은 "남성" 또는 "여성" 문자열로 입력받음
+# 함수 호출 결과를 아래 형식으로 출력하시오. (소수점 둘째 자리까지)
+
 
 
 
