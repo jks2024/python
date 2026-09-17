@@ -15,7 +15,6 @@ def power(n):
 out = list(map(lambda x: x * x, [1, 2, 3, 4, 5]))
 print(out)
 
-
 number = list(map(int, input("입력: ").split()))  # 여러개의 데이터를 입력 받아서 리스트 구성
 odd = list(filter(lambda x: x % 2 == 1, number))
 even = list(filter(lambda x: x % 2 == 0, number))
