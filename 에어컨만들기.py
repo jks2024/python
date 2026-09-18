@@ -10,7 +10,6 @@ class AirCon:
         self.power = power      # 전원
         self.temp = temp        # 설정 온도
         self.wind_step = step   # 바람 세기
-        self.cur
 
     def set_power(self, is_on):
         self.power = is_on
