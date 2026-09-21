@@ -51,7 +51,18 @@ except requests.exceptions.RequestException as e:
 dict_data = response.json()
 print(json.dumps(dict_data, indent=2))
 
+# 딕셔너리 데이터를 분석하여 원하는 데이터를 추출
+weather_items = dict_data['response']['body']['items']['item']
 
+for weather_item in weather_items:
+    obsrValue = weather_item['obsrValue']
+    category = weather_item['category']
+    if category == 'T1H':
+        print(f"[현재 기온 : {obsrValue}℃]")
+    elif category == 'REH':
+        print(f"[현재 습도 : {obsrValue}%]")
+    elif category == 'RN1':
+        print(f"[1시간 강수량 : {obsrValue}mm]")
 
 
 
