@@ -61,6 +61,30 @@ members = [
     }
 ]
 
+# Python 객체를 JSON으로 직렬화
+json_str = json.dumps(members, ensure_ascii=False, indent=4)
+print(json_str)
+
+# JSON을 -> Python으로 역직렬화
+obj = json.loads(json_str)
+print(obj)
+
+print("----------------------------------")
+for e in obj:
+    print(e)
+print("----------------------------------")
+
+
+# 파일로 저장 하기
+# with는 파일을 자동으로 닫아 줌
+with open('data.json', 'w', encoding='utf-8') as json_file:
+    json.dump(members, json_file, ensure_ascii=False, indent=4)
+
+# 파일에서 읽기
+with open('data.json', 'r', encoding='utf-8') as json_file:
+    data = json.load(json_file)
+
+print(data)
 
 
 
