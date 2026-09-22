@@ -6,7 +6,6 @@ def get_connection():
                            password="sphb8250", db="mysqlDB", charset="utf8")
     return conn
 
-
 def create_user_table(conn):
     cur = conn.cursor()
 
